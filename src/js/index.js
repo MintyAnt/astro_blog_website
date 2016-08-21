@@ -1,3 +1,4 @@
+/* global document */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,4 +12,3 @@ ReactDOM.render(
     <Router history={history} routes={routes} />,
     document.getElementById('content')
 );
-
