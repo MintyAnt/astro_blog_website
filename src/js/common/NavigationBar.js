@@ -15,7 +15,11 @@ const NavigationBar = () => {
         },
         text: {
             margin: 0,
-        }
+        },
+        linkContainer: {
+            width: '100%',
+            height: '50px',
+        },
         links: {
             float: 'left',
             padding: '10px',
@@ -24,10 +28,10 @@ const NavigationBar = () => {
     };
 
     const linkInfo = [
-        { title: 'Home', href: '???' },
+        { title: 'Home', href: '#/' },
         { title: 'Pictures', href: '???' },
         { title: 'Blog', href: '???' },
-        { title: 'About', href: '???' },
+        { title: 'About', href: '#/about' },
     ];
 
     const links = linkInfo.map((link, i) => (
@@ -37,7 +41,7 @@ const NavigationBar = () => {
     ));
 
     return (
-        <Section height="50px">
+        <Section height="100%">
             <div>
                 <div style={styles.headerImage} />
                 <div style={styles.title}>
@@ -45,7 +49,9 @@ const NavigationBar = () => {
                     <p style={styles.text}>B Duane</p>
                 </div>
             </div>
-            {links}
+            <div style={styles.linkContainer}>
+                {links}
+            </div>
         </Section>
     );
 };
