@@ -1,4 +1,5 @@
 import React, { PropTypes as Types } from 'react';
+import NavigationBar from '../common/NavigationBar';
 
 const Main = ({ children }) => {
     const styles = {
@@ -10,9 +11,10 @@ const Main = ({ children }) => {
 
     return (
       <div>
-          <div style={styles.childrenStyle}>
-            {children}
-          </div>
+        <NavigationBar />
+        <div style={styles.childrenStyle}>
+          {children}
+        </div>
       </div>
     );
 };
