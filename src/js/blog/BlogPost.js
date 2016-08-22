@@ -1,24 +1,23 @@
 import React, { PropTypes as Types } from 'react';
+import ReactMarkdown from 'react-markdown';
 
-export default class BlogPost extends React.Component {
-    static propTypes = {
-        title: Types.string,
-        date: Types.string,
-        tags: Types.array,
-        markup: Types.element,
+const BlogPost = (props) => {
+    const styles = {
     };
 
-    render() {
-        const styles = {
-        };
+    return (
+        <div>
+            <div />
+            <ReactMarkdown escapeHtml={false} source={props.markdown} />
+        </div>
+    );
+};
 
-        return (
-            <div>
-                <div />
-                <div>
-                    {this.props.markup}
-                </div>
-            </div>
-        );
-    }
-}
+BlogPost.propTypes = {
+    title: Types.string,
+    date: Types.string,
+    tags: Types.string,
+    markdown: Types.string,
+};
+
+export default BlogPost;

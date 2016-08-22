@@ -1,5 +1,4 @@
 import React from 'react';
-import markdown from 'markdown';
 import BlogPost from './BlogPost';
 
 const Blog = () => {
@@ -9,33 +8,46 @@ const Blog = () => {
             title: 'Post 1',
             date: 'aug 25th',
             tags: ['a', 'b', 'c'],
-            postMarkup: 'Hello.\n\n* This is markdown.\n* It is fun\n* Love it or leave it.',
+            markdown: 'Hello.\n\n* This is markdown.\n* It is fun\n* Love it or leave it.',
         },
         {
             title: 'Post 2',
-            date: 'aug 28th',
+            date: 'aug 27th',
             tags: ['d', 'e', 'f'],
-            postMarkup: 'Vessel     | Captain\n-----------|-------------\nNCC-1701   | James T Kirk\nNCC-1701 A | James T Kirk\nNCC-1701 D | Picard',
+            markdown: '## HTML block below\n\n<blockquote>\nThis blockquote will change based on the HTML settings above.\n</blockquote>',
+        },
+        {
+            title: 'Post 3',
+            date: 'aug 28th',
+            tags: ['bee', 'bats', 'bort'],
+            markdown: `
+                ## How about some code?
+                \`\`\`js
+                var React = require('react');
+                var Markdown = require('react-markdown');
+
+                React.render(
+                    <Markdown source="# Your markdown here" />,
+                    document.getElementById('content')
+                );
+                \`\`\`
+            `,
         },
     ];
 
-
-    const posts = postsData.map((post, i) => {
-        const convertedMarkup = markdown.toHTML(post.postMarkup);
-        return (
-            <BlogPost
-              key={i}
-              title={post.title}
-              date={post.title}
-              tags={post.title}
-              markup={convertedMarkup}
-            />
-        );
-    });
-
+    const posts = postsData.map((post, i) => (
+        <BlogPost
+          key={i}
+          title={post.title}
+          date={post.title}
+          tags={post.title}
+          markdown={post.markdown}
+        />
+    ));
 
     return (
         <div>
+            The Blog
             {posts}
         </div>
     );

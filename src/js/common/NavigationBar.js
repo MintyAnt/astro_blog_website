@@ -30,7 +30,7 @@ const NavigationBar = () => {
     const linkInfo = [
         { title: 'Home', href: '#/' },
         { title: 'Pictures', href: '???' },
-        { title: 'Blog', href: '???' },
+        { title: 'Blog', href: '#/blog' },
         { title: 'About', href: '#/about' },
     ];
 
