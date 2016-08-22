@@ -10,5 +10,5 @@ const history = useRouterHistory(createHistory)({ queryKey: false });
 
 ReactDOM.render(
     <Router history={history} routes={routes} />,
-    document.getElementById('content')
+    document.getElementById('astroBlog')
 );
